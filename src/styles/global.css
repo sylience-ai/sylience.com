@@ -16,7 +16,7 @@
   --font-heading: 'Carlito', 'Calibri Light', 'Calibri', sans-serif;
 
   /* Layout */
-  --content-width: 680px;
+  --content-width: 780px;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
@@ -44,6 +44,12 @@ body {
   background-color: var(--color-bg);
   line-height: 1.65;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 /* Typography */
@@ -150,8 +156,17 @@ li {
   color: var(--color-hover);
 }
 
+/* Home page header - centered nav only */
+.site-header--home .container {
+  justify-content: center;
+}
+
+.site-nav--home {
+  gap: var(--spacing-lg);
+}
+
 /* Main content */
-main {
+main.page-content {
   padding-bottom: var(--spacing-xl);
 }
 
@@ -161,23 +176,72 @@ main {
   font-size: 0.875rem;
   color: var(--color-text);
   opacity: 0.7;
+  text-align: center;
+}
+
+/* Home page - centered layout */
+.home-content {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.home-content .section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.home-content p {
+  text-align: left;
 }
 
 /* Hero section for homepage */
 .hero {
   margin-bottom: var(--spacing-xl);
+  text-align: center;
+  padding-top: var(--spacing-lg);
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-xs);
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--color-heading);
   font-weight: 400;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
+  opacity: 0.85;
+}
+
+/* Learn more list */
+.learn-more {
+  text-align: left;
+}
+
+.learn-more p {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.learn-more ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.learn-more li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.learn-more li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-link);
 }
 
 /* Job listing styles */

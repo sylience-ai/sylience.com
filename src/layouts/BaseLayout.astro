@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   description?: string;
+  isHome?: boolean;
 }
 
-const { title, description = "Improving human reasoning with AI." } = Astro.props;
+const { title, description = "Improving human reasoning with AI.", isHome = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,10 +19,10 @@ const { title, description = "Improving human reasoning with AI." } = Astro.prop
     <title>{title}</title>
   </head>
   <body>
-    <header class="site-header">
+    <header class={`site-header ${isHome ? 'site-header--home' : ''}`}>
       <div class="container">
-        <a href="/" class="site-name">Sylience</a>
-        <nav class="site-nav">
+        {!isHome && <a href="/" class="site-name">Sylience</a>}
+        <nav class={`site-nav ${isHome ? 'site-nav--home' : ''}`}>
           <a href="/about">About</a>
           <a href="/careers">Careers</a>
         </nav>

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllJobs } from '../../data/jobs';
+
+const jobs = getAllJobs();
 ---
 
 <BaseLayout title="Careers - Sylience" description="Join Sylience and help build the future of human communication.">
@@ -19,14 +22,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <h2>Open Roles</h2>
 
   <ul class="job-list">
-    <li>
-      <h3 class="job-title"><a href="/careers/chief-of-staff">Chief of Staff</a></h3>
-      <p class="job-location">Remote, US timezones preferred</p>
-    </li>
-    <li>
-      <h3 class="job-title"><a href="/careers/founding-engineer">Founding Engineer</a></h3>
-      <p class="job-location">Remote, US timezones preferred</p>
-    </li>
+    {jobs.map(job => (
+      <li>
+        <h3 class="job-title"><a href={`/careers/${job.slug}`}>{job.title}</a></h3>
+        <p class="job-location">{job.location}</p>
+      </li>
+    ))}
   </ul>
 
   <section class="section">

@@ -1,0 +1,68 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { Job } from '../data/jobs';
+
+interface Props {
+  job: Job;
+}
+
+const { job } = Astro.props;
+---
+
+<BaseLayout title={`${job.title} - Careers - Sylience`} description={job.description}>
+  <div class="job-header">
+    <h1>{job.title}</h1>
+    <p class="job-meta">{job.location}</p>
+  </div>
+
+  <h2>About Chord</h2>
+  <section class="section">
+    {job.aboutChord.split('\n\n').map(p => <p>{p}</p>)}
+  </section>
+
+  <h2>About the role</h2>
+  <section class="section">
+    {job.aboutRole.split('\n\n').map(p => <p>{p}</p>)}
+
+    {job.responsibilities.length > 0 && (
+      <>
+        <h3>You will:</h3>
+        <ul>
+          {job.responsibilities.map(item => <li>{item}</li>)}
+        </ul>
+      </>
+    )}
+  </section>
+
+  <h3>You may be a good fit if:</h3>
+  <ul>
+    {job.goodFit.map(item => <li>{item}</li>)}
+  </ul>
+
+  <h3>We don't expect candidates to have done everything, but we'd be excited if:</h3>
+  <ul>
+    {job.bonuses.map(item => <li>{item}</li>)}
+  </ul>
+
+  <h2>Compensation</h2>
+  <section class="section">
+    <p><strong>Salary:</strong> {job.salary}</p>
+    <p><strong>Equity:</strong> {job.equity}</p>
+  </section>
+
+  <h2>Apply</h2>
+  <section class="section">
+    <p>
+      Send your resume to <a href="mailto:careers@sylience.com">careers@sylience.com</a> with
+      the subject line "Application for {job.title} role - [Your Name]".
+    </p>
+    <p>Optionally, please feel free to include 1–2 sentences in your email about any or all of:</p>
+    <ol>
+      <li>Why you're interested in Chord;</li>
+      <li>Why you think you'd be a good fit;</li>
+      <li>Anything else you think we should know.</li>
+    </ol>
+  </section>
+
+  <p><a href="/careers">&larr; Back to all roles</a></p>
+</BaseLayout>

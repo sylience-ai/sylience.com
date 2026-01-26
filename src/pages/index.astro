@@ -2,30 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Sylience - Improving human reasoning with AI" isHome={true}>
-  <div class="home-content">
-    <section class="hero">
-      <h1 class="hero-title">Sylience</h1>
-      <p class="hero-tagline">Improving human reasoning with AI.</p>
-    </section>
-
-    <section class="section">
-      <p>
-        Sylience is a public benefit corporation whose mission is to improve reasoning and
-        enable broad participation in decision-making, foster human connection, and enhance human agency.
-      </p>
-      <p>
-        Sylience is the company behind Chord, the platform for orchestrated communication.
-      </p>
-    </section>
-
-    <section class="section learn-more">
-      <p>Learn more about:</p>
-      <ul>
-        <li><a href="https://chord.sylience.com">how Chord helps your business make better decisions, faster</a></li>
-        <li><a href="/about">Sylience and its mission</a></li>
-        <li><a href="/careers">opportunities to build the future of human communication</a></li>
-      </ul>
-    </section>
+<BaseLayout title="Sylience" isHome={true}>
+  <h1 class="title">Sylience</h1>
+  <p class="tagline">Improving human reasoning with AI.</p>
+  <p class="product-intro">Sylience is the company behind <a href="https://chord.sylience.com">Chord</a>, the platform for orchestrated communication.</p>
+  <div class="links">
+    <a href="https://chord.sylience.com" class="link-item">Try Chord</a>
+    <a href="/about" class="link-item">Our Mission</a>
+    <a href="/careers" class="link-item">Join Us</a>
   </div>
 </BaseLayout>

@@ -3,9 +3,10 @@ interface Props {
   title: string;
   description?: string;
   isHome?: boolean;
+  activePage?: string;
 }
 
-const { title, description = "Improving human reasoning with AI.", isHome = false } = Astro.props;
+const { title, description = "Improving human reasoning with AI.", isHome = false, activePage = "" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,28 +18,24 @@ const { title, description = "Improving human reasoning with AI.", isHome = fals
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <header class={`site-header ${isHome ? 'site-header--home' : ''}`}>
-      <div class="container">
-        {!isHome && <a href="/" class="site-name">Sylience</a>}
-        <nav class={`site-nav ${isHome ? 'site-nav--home' : ''}`}>
-          <a href="/about">About</a>
-          <a href="/careers">Careers</a>
-        </nav>
-      </div>
+  <body class={isHome ? 'home-body' : ''}>
+    <header>
+      <a href="/" class="brand">Sylience</a>
+      <nav>
+        <a href="/about" class={activePage === 'about' ? 'active' : ''}>About</a>
+        <a href="/careers" class={activePage === 'careers' ? 'active' : ''}>Careers</a>
+      </nav>
     </header>
 
-    <main>
-      <div class="container">
-        <slot />
-      </div>
+    <main class={isHome ? 'home-main' : ''}>
+      <slot />
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        &copy; 2026 Sylience &middot; <a href="mailto:hello@sylience.com">hello@sylience.com</a>
-      </div>
+    <footer>
+      <div>&copy; 2026 Sylience, Inc. &middot; A Public Benefit Corporation</div>
+      <a href="mailto:hello@sylience.com" class="footer-email">hello@sylience.com</a>
     </footer>
   </body>
 </html>

@@ -1,38 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getAllJobs } from '../../data/jobs';
-
-const jobs = getAllJobs();
 ---
 
-<BaseLayout title="Careers - Sylience" description="Join Sylience and help build the future of human communication.">
-  <h1>Careers</h1>
+<BaseLayout title="Careers - Sylience" description="Join Sylience and help build the future of human communication." activePage="careers">
+  <h1>Join Us</h1>
 
-  <section class="section">
-    <p>
-      Sylience is building Chord, the platform for orchestrated communication. We're looking for
-      exceptional people who want to help improve how humans reason and make decisions together.
-    </p>
-    <p>
-      We're a small, early-stage team. You'll have the opportunity to shape the company from
-      the ground up and work on problems that matter for humanity's future.
-    </p>
-  </section>
+  <p class="intro">We're a small team working on ambitious problems at the intersection of AI and human reasoning. We're looking for people who move fast, thrive in ambiguity, and care deeply about building things that matter.</p>
 
-  <h2>Open Roles</h2>
+  <div class="jobs">
+    <a href="/careers/founding-engineer" class="job">
+      <div class="job-title">Founding Engineer</div>
+      <div class="job-meta">Full-time · Remote · US timezones preferred</div>
+    </a>
+    <a href="/careers/chief-of-staff" class="job">
+      <div class="job-title">Chief of Staff</div>
+      <div class="job-meta">Full-time · Remote · US timezones preferred</div>
+    </a>
+  </div>
 
-  <ul class="job-list">
-    {jobs.map(job => (
-      <li>
-        <h3 class="job-title"><a href={`/careers/${job.slug}`}>{job.title}</a></h3>
-        <p class="job-location">{job.location}</p>
-      </li>
-    ))}
-  </ul>
-
-  <section class="section">
-    <p class="text-muted">
-      Don't see a role that fits? Reach out anyway at <a href="mailto:careers@sylience.com">careers@sylience.com</a>.
-    </p>
-  </section>
+  <div class="contact">
+    <p>Don't see a role that fits? Reach out to <a href="mailto:hiring@sylience.com">hiring@sylience.com</a>.</p>
+  </div>
 </BaseLayout>

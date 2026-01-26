@@ -1,13 +1,12 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import JobLayout from '../../layouts/JobLayout.astro';
 ---
 
-<BaseLayout title="Chief of Staff - Sylience" description="Join Sylience as Chief of Staff and drive critical initiatives." activePage="careers">
-  <a href="/careers" class="back-link">&larr; All positions</a>
-
-  <h1>Chief of Staff</h1>
-  <p class="location">Remote · US timezones preferred</p>
-
+<JobLayout
+  title="Chief of Staff - Sylience"
+  role="Chief of Staff"
+  description="Join Sylience as Chief of Staff and drive critical initiatives."
+>
   <p>As Chief of Staff, you'll own critical initiatives for driving the business forward and scaling the organization, focusing on the highest leverage points on any given day. You'll step into ambiguous situations, figure out what needs to happen, and make it happen. As the business matures, you might continue to grow your responsibilities as an operational leader, or you might shift your focus to the specialization closest to your heart, whether that's people, business development, or product management.</p>
 
   <h2>You will:</h2>
@@ -45,16 +44,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p><strong>Equity:</strong> 0.5–3% depending on experience and salary requirements.</p>
   </div>
 
-  <div class="apply-section">
-    <h2>Apply</h2>
-    <p>Send your resume to <a href="mailto:careers@sylience.com">careers@sylience.com</a> with the subject line "Application for Chief of Staff role - [Your Name]".</p>
-    <p>Optionally, please feel free to include 1–2 sentences in your email about any or all of:</p>
-    <ol>
-      <li>Why you're interested in Chord;</li>
-      <li>Why you think you'd be a good fit;</li>
-      <li>Anything else you think we should know.</li>
-    </ol>
-    <p class="encouragement">If you think you'd be a good fit for this role, we encourage you to apply even if you don't check every box. Research shows that people from underrepresented groups are more prone to experiencing imposter syndrome and doubting the strength of their candidacy, so we especially encourage such candidates not to self-select out.</p>
-    <p class="encouragement">If you think there's a different role we should hire you for, feel free to pitch us on why we should be excited about that.</p>
-  </div>
-</BaseLayout>
+  <p slot="extra-apply" class="encouragement">If you think there's a different role we should hire you for, feel free to pitch us on why we should be excited about that.</p>
+</JobLayout>

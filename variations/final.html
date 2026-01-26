@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sylience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #4d5c52;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2.5rem;
+    }
+    header a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--color-primary); }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .title {
+      font-size: clamp(5.5rem, 14vw, 8rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 0.25em;
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+    .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-muted);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Single pill CTA */
+    .cta {
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+    .cta a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.8rem;
+      border: 1px solid rgba(42, 56, 48, 0.2);
+      border-radius: 100px;
+      transition: background 0.25s, color 0.25s;
+    }
+    .cta a:hover {
+      background: var(--color-primary);
+      color: var(--color-bg);
+    }
+
+    footer {
+      padding: 1.5rem 2.5rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--color-primary); }
+    .footer-email {
+      display: block;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#">About</a>
+    <a href="#">Careers</a>
+  </header>
+
+  <main>
+    <h1 class="title">Sylience</h1>
+    <p class="tagline">improving human reasoning with AI</p>
+    <div class="cta">
+      <a href="#">Try Chord</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Sylience</div>
+    <a href="#" class="footer-email">hello@sylience.com</a>
+  </footer>
+</body>
+</html>

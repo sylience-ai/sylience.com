@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Sylience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #4d5c52;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+    }
+
+    /* Fixed header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(250, 246, 239, 0.95);
+      box-shadow: 0 1px 0 rgba(42, 56, 48, 0.08);
+    }
+    .brand {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
+    header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    header nav a.active { color: var(--color-primary); }
+    header nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-primary);
+      transition: width 0.3s;
+    }
+    header nav a:hover { color: var(--color-primary); }
+    header nav a:hover::after, header nav a.active::after { width: 100%; }
+
+    /* Main content */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 2.5rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      border-top: 1px solid rgba(42, 56, 48, 0.08);
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--color-primary); }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(42, 56, 48, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="g6-synthesis.html" class="brand">Sylience</a>
+    <nav>
+      <a href="#" class="active">About</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Sylience</h1>
+
+    <p class="intro">Sylience is a public benefit corporation whose mission is to improve reasoning and enable broad participation in decision-making, foster human connection, and enhance agency.</p>
+
+    <p>Sylience is the company behind Chord, the platform for orchestrated communication. We raised pre-seed funding from mission-aligned foundations and angel investors in 2025.</p>
+
+    <h2>Sylience's thesis</h2>
+
+    <p>AI companies are developing increasingly powerful AI systems, with the goal of building general-purpose AI that exceeds human ability in practically every domain. Some expect them to achieve this as soon as within the next five years.</p>
+
+    <p>The creation of entities more intelligent than humans is no small matter. We don't know how to make sure that these entities follow human instructions, and many people think this is an extremely hard problem. The mainstream plan is to ask the slightly less intelligent AI to help us figure out how to align the slightly more intelligent one, and to hope that it works. This could have irreversible consequences for humanity's future.</p>
+
+    <p>In other words, humans have to make some extremely consequential decisions that could permanently alter humanity's future trajectory, including whether we're even ready for AI systems smarter than ourselves. Unfortunately, we don't have the best track record for getting high-stakes decisions right on the first try.</p>
+
+    <p>At the same time, existing AI capabilities are already enabling a new wave of technologies that weren't previously possible. AI promises to change the way we do many things, and that includes how we reason, cooperate, and make decisions. Sylience was founded to use these new capabilities to build products that help humans make better collective decisions according to our own collective values, including on the most consequential decisions about AI itself.</p>
+
+    <p>There already exist principles and techniques for clearer thinking and better communication that people often fail to reach for them. If we build new products that are great for improving reasoning but nobody uses them, it's unlikely that our work will translate to a better humanity. As such, we believe it's crucial to ask not only whether the products we build have the potential to help people make better decisions, but whether and how people making decisions will actually use them.</p>
+
+    <h2>Why we're building Chord</h2>
+
+    <p>That's why we're building Chord, the platform for orchestrated communication.</p>
+
+    <p>"Orchestrated communication" makes better use of each individual's bandwidth in a discussion to incorporate the best thinking of all stakeholders, creating higher-resolution context and better understanding of the consequences of decisions and actions. This enables humans to achieve better outcomes according to their own collective values and goals.</p>
+
+    <p>Parallelizing communication also addresses the fundamental inefficiencies of too many meetings where people take turns to speak, which helps organizations make decisions faster. Solving the acute pain point of ineffective meetings and saving valuable human time offers a clear path to commercial success and rapid broad adoption. This means that orchestrated communication will become as ubiquitous for group communication as conferencing and video conferencing are today, leading to better decisions across the board, even for decision makers who wouldn't have intentionally sought out tools focused on decision making.</p>
+  </main>
+
+  <footer>
+    © 2026 Sylience · <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>G series</summary>
+    <a href="g1-base-refined.html">G1: Base Refined</a>
+    <a href="g2-footer-right.html">G2: Footer Right</a>
+    <a href="g3-with-brief.html">G3: With Brief About</a>
+    <a href="g4-underline-links.html">G4: Underline Links</a>
+    <a href="g5-subtle-bg-hover.html">G5: Subtle BG Hover</a>
+    <a href="g6-synthesis.html">G6: Synthesis</a>
+    <a href="g6-about.html" class="current">G6: About Page</a>
+  </details>
+</body>
+</html>

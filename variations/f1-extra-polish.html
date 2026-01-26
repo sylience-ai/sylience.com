@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>F1: Extra Polish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #4d5c52;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header with brand that fades in on hover/focus */
+    header {
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    header:hover .brand { opacity: 0.5; }
+    header nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+    header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    header nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-primary);
+      transition: width 0.3s ease;
+    }
+    header nav a:hover { color: var(--color-primary); }
+    header nav a:hover::after { width: 100%; }
+
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    /* Extra polish: staggered letter animation */
+    .title {
+      font-size: clamp(5.5rem, 14vw, 8rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 0.25em;
+    }
+    .title span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: letterUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .title span:nth-child(1) { animation-delay: 0.05s; }
+    .title span:nth-child(2) { animation-delay: 0.1s; }
+    .title span:nth-child(3) { animation-delay: 0.15s; }
+    .title span:nth-child(4) { animation-delay: 0.2s; }
+    .title span:nth-child(5) { animation-delay: 0.25s; }
+    .title span:nth-child(6) { animation-delay: 0.3s; }
+    .title span:nth-child(7) { animation-delay: 0.35s; }
+    .title span:nth-child(8) { animation-delay: 0.4s; }
+    @keyframes letterUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-muted);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Links with number badges */
+    .links {
+      display: flex;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    }
+    .link-item {
+      position: relative;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid rgba(42, 56, 48, 0.15);
+      border-radius: 100px;
+      overflow: hidden;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .link-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+    .link-item:hover {
+      color: var(--color-bg);
+      border-color: var(--color-primary);
+    }
+    .link-item:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--color-primary); }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(42, 56, 48, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">Sylience</a>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="title">
+      <span>S</span><span>y</span><span>l</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span>
+    </h1>
+    <p class="tagline">improving human reasoning with AI</p>
+    <div class="links">
+      <a href="#" class="link-item">Explore Chord</a>
+      <a href="#" class="link-item">Our Mission</a>
+      <a href="#" class="link-item">Join Us</a>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Sylience</span>
+    <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>F series</summary>
+    <a href="f1-extra-polish.html" class="current">F1: Extra Polish</a>
+    <a href="f2-single-focus.html">F2: Single Focus</a>
+    <a href="f3-mission-first.html">F3: Mission First</a>
+  </details>
+</body>
+</html>

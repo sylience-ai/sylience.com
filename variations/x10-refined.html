@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X10: Refined</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-heading: #2d3b32;
+      --color-text: #566059;
+      --color-bg: #FAF8F3;
+      --color-accent: #7a9682;
+      --color-link-border: #c8d4cb;
+      --font-body: 'Carlito', sans-serif;
+      --content-width: 720px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+
+    /* Fixed nav - elegant, unobtrusive */
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      z-index: 100;
+      background: linear-gradient(to bottom, var(--color-bg) 60%, transparent);
+    }
+    .fixed-nav a {
+      color: var(--color-text);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .fixed-nav a:hover { color: var(--color-heading); }
+
+    /* Hero - large, centered, elegant */
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+    .hero-title {
+      font-size: 5rem;
+      color: var(--color-heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-tagline {
+      font-size: 1.35rem;
+      color: var(--color-text);
+      font-weight: 400;
+    }
+
+    /* Content - centered, comfortable width */
+    .content {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+      text-align: center;
+    }
+    .content > p {
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Learn more - refined link treatment */
+    .learn-more {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .learn-more-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: var(--color-accent);
+      margin-bottom: 1.75rem;
+      font-weight: 600;
+    }
+    .learn-more ul {
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+      text-align: left;
+    }
+    .learn-more li {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .learn-more li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      opacity: 0.6;
+      transition: opacity 0.15s ease;
+    }
+    .learn-more li:hover::before {
+      opacity: 1;
+    }
+    .learn-more a {
+      color: var(--color-heading);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-link-border);
+      padding-bottom: 1px;
+      transition: border-color 0.15s ease;
+    }
+    .learn-more a:hover {
+      border-color: var(--color-heading);
+    }
+
+    /* Footer - clean, subtle */
+    .site-footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-text);
+      opacity: 0.5;
+    }
+    .site-footer a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+    .site-footer a:hover { opacity: 0.8; }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(45, 59, 50, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 200px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.8); padding: 0.25rem 0.5rem; font-size: 0.65rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <nav class="fixed-nav">
+    <a href="#">About</a>
+    <a href="#">Careers</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">Sylience</h1>
+      <p class="hero-tagline">improving human reasoning with AI</p>
+    </section>
+
+    <section class="content">
+      <p>
+        Sylience is a public benefit corporation whose mission is to improve reasoning and
+        enable broad participation in decision-making, foster human connection, and enhance human agency.
+      </p>
+      <p>
+        Sylience is the company behind Chord, the platform for orchestrated communication.
+      </p>
+
+      <div class="learn-more">
+        <p class="learn-more-label">Learn more about</p>
+        <ul>
+          <li><a href="#">how Chord helps your business make better decisions, faster</a></li>
+          <li><a href="#">Sylience and its mission</a></li>
+          <li><a href="#">opportunities to build the future of human communication</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Sylience · <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>Variations</summary>
+    <a href="x1-large-hero-fixed-nav.html">X1: Large Hero + Fixed Nav</a>
+    <a href="x2-soft-wide-centered.html">X2: Soft & Wide</a>
+    <a href="x3-warm-accents.html">X3: Warm Accents</a>
+    <a href="x4-dark-mode.html">X4: Dark Mode</a>
+    <a href="x5-minimal-airy.html">X5: Minimal Airy</a>
+    <a href="x6-bold-typography.html">X6: Bold Typography</a>
+    <a href="x7-card-links.html">X7: Card Links</a>
+    <a href="x8-editorial.html">X8: Editorial</a>
+    <a href="x9-compact.html">X9: Compact</a>
+    <a href="x10-refined.html" class="current">X10: Refined</a>
+  </details>
+</body>
+</html>

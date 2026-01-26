@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D2: Confident</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1d2a22;
+      --color-text: #4a5850;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header - confident, visible */
+    header {
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
+    header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--color-primary); }
+
+    /* Main - confident presence */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .title {
+      font-size: clamp(6rem, 15vw, 9rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      margin-bottom: 0.2em;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Confident CTA */
+    .cta {
+      display: inline-block;
+      color: var(--color-bg);
+      background: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(29, 42, 34, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 3rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+    }
+    footer a { color: inherit; text-decoration: none; }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(29, 42, 34, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">Sylience</a>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="title">Sylience</h1>
+    <p class="tagline">improving human reasoning with AI</p>
+    <a href="#" class="cta">Explore Chord</a>
+  </main>
+
+  <footer>
+    © 2026 Sylience · <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>D series</summary>
+    <a href="d1-whisper.html">D1: Whisper</a>
+    <a href="d2-confident.html" class="current">D2: Confident</a>
+    <a href="d3-balanced.html">D3: Balanced</a>
+    <a href="d4-elegant.html">D4: Elegant</a>
+    <a href="d5-final.html">D5: Final</a>
+  </details>
+</body>
+</html>

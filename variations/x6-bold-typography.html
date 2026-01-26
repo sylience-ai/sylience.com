@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X6: Bold Typography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-heading: #1a2420;
+      --color-text: #3a4a40;
+      --color-bg: #FDF8ED;
+      --color-muted: #8a9a8f;
+      --font-body: 'Carlito', sans-serif;
+      --content-width: 820px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+
+    /* Header with large brand */
+    .site-header {
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .site-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      text-decoration: none;
+    }
+    .site-nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+    .site-nav a {
+      color: var(--color-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .site-nav a:hover { color: var(--color-heading); }
+
+    /* Hero - massive type */
+    .hero {
+      padding: 4rem 3rem 6rem;
+      max-width: 1000px;
+    }
+    .hero-title {
+      font-size: 7rem;
+      color: var(--color-heading);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .hero-tagline {
+      font-size: 1.75rem;
+      color: var(--color-text);
+      font-weight: 400;
+      max-width: 500px;
+    }
+
+    /* Content */
+    .content {
+      max-width: var(--content-width);
+      padding: 0 3rem 6rem;
+    }
+    .content p {
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+    .section { margin-bottom: 4rem; }
+
+    /* Learn more - bold treatment */
+    .learn-more {
+      margin-top: 3rem;
+    }
+    .learn-more-label {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      margin-bottom: 1.5rem;
+    }
+    .learn-more ul {
+      list-style: none;
+      padding: 0;
+      padding-left: 3rem;
+    }
+    .learn-more li {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+    .learn-more a {
+      color: var(--color-text);
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-muted);
+      padding-bottom: 2px;
+      transition: border-color 0.15s ease;
+    }
+    .learn-more a:hover {
+      border-color: var(--color-heading);
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 3rem;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .site-footer a { color: inherit; text-decoration: none; }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(49, 67, 56, 0.9);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 200px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.8); padding: 0.25rem 0.5rem; font-size: 0.65rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #ED7D31; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="site-brand">Sylience</a>
+    <nav class="site-nav">
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">Sylience</h1>
+      <p class="hero-tagline">improving human reasoning with AI</p>
+    </section>
+
+    <section class="content">
+      <div class="section">
+        <p>
+          Sylience is a public benefit corporation whose mission is to improve reasoning and
+          enable broad participation in decision-making, foster human connection, and enhance human agency.
+        </p>
+        <p>
+          Sylience is the company behind Chord, the platform for orchestrated communication.
+        </p>
+      </div>
+
+      <div class="learn-more">
+        <p class="learn-more-label">Learn more about</p>
+        <ul>
+          <li><a href="#">how Chord helps your business make better decisions, faster</a></li>
+          <li><a href="#">Sylience and its mission</a></li>
+          <li><a href="#">opportunities to build the future of human communication</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Sylience · <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>Variations</summary>
+    <a href="x1-large-hero-fixed-nav.html">X1: Large Hero + Fixed Nav</a>
+    <a href="x2-soft-wide-centered.html">X2: Soft & Wide</a>
+    <a href="x3-warm-accents.html">X3: Warm Accents</a>
+    <a href="x4-dark-mode.html">X4: Dark Mode</a>
+    <a href="x5-minimal-airy.html">X5: Minimal Airy</a>
+    <a href="x6-bold-typography.html" class="current">X6: Bold Typography</a>
+    <a href="x7-card-links.html">X7: Card Links</a>
+    <a href="x8-editorial.html">X8: Editorial</a>
+    <a href="x9-compact.html">X9: Compact</a>
+    <a href="x10-refined.html">X10: Refined</a>
+  </details>
+</body>
+</html>

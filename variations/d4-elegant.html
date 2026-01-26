@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D4: Elegant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #5a6a60;
+      --color-muted: #8a9890;
+      --color-bg: #FDFAF5;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.8;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Three-row layout */
+    .page {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+
+    /* Header - elegant line */
+    header {
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(42, 56, 48, 0.08);
+    }
+    .brand {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    header nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+    header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+    header nav a:hover { color: var(--color-primary); }
+
+    /* Main */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .title {
+      font-size: clamp(5.5rem, 14vw, 8rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 0.25em;
+    }
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--color-muted);
+      margin-bottom: 3rem;
+    }
+
+    /* Elegant single link */
+    .cta {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.75rem;
+      border: 1px solid rgba(42, 56, 48, 0.15);
+      border-radius: 100px;
+      transition: all 0.3s;
+    }
+    .cta:hover {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border-color: var(--color-primary);
+    }
+
+    /* Footer - elegant line */
+    footer {
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      border-top: 1px solid rgba(42, 56, 48, 0.08);
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--color-text); }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(42, 56, 48, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="#" class="brand">Sylience</a>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="title">Sylience</h1>
+      <p class="tagline">improving human reasoning with AI</p>
+      <a href="#" class="cta">Explore Chord</a>
+    </main>
+
+    <footer>
+      <span>© 2026 Sylience</span>
+      <a href="#">hello@sylience.com</a>
+    </footer>
+  </div>
+
+  <details class="nav-box">
+    <summary>D series</summary>
+    <a href="d1-whisper.html">D1: Whisper</a>
+    <a href="d2-confident.html">D2: Confident</a>
+    <a href="d3-balanced.html">D3: Balanced</a>
+    <a href="d4-elegant.html" class="current">D4: Elegant</a>
+    <a href="d5-final.html">D5: Final</a>
+  </details>
+</body>
+</html>

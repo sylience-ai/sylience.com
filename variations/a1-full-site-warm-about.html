@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A1: Full Site (Warm) - About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #4d5c52;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --color-bg-alt: #F4EFE7;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== SHARED HEADER ===== */
+    .site-header {
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-header .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .site-header .brand:hover { opacity: 0.7; }
+    .site-header nav {
+      display: flex;
+      gap: 2rem;
+    }
+    .site-header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .site-header nav a:hover { color: var(--color-primary); }
+    .site-header nav a.active { color: var(--color-primary); }
+
+    /* ===== PAGE CONTENT ===== */
+    main {
+      flex: 1;
+      padding: 4rem 2.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    main h1 {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    main p {
+      margin-bottom: 1.5rem;
+    }
+    main h2 {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== SHARED FOOTER ===== */
+    .site-footer {
+      padding: 3rem 2.5rem;
+      background: var(--color-bg-alt);
+      border-top: 1px solid rgba(42, 56, 48, 0.06);
+    }
+    .site-footer .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-footer .copyright {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+    }
+    .site-footer nav {
+      display: flex;
+      gap: 2rem;
+    }
+    .site-footer nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+    .site-footer nav a:hover { color: var(--color-primary); }
+
+    /* Page nav */
+    .page-nav {
+      position: fixed;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1000;
+    }
+    .page-nav a {
+      display: block;
+      padding: 0.4rem 0.8rem;
+      background: rgba(42, 56, 48, 0.08);
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.65rem;
+      border-radius: 4px;
+    }
+    .page-nav a:hover { background: rgba(42, 56, 48, 0.15); }
+    .page-nav a.current { background: var(--color-primary); color: white; }
+
+    /* Variation nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(42, 56, 48, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="a1-full-site-warm.html" class="brand">Sylience</a>
+    <nav>
+      <a href="a1-full-site-warm-about.html" class="active">About</a>
+      <a href="a1-full-site-warm-careers.html">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Sylience</h1>
+
+    <p>
+      Sylience is a public benefit corporation whose mission is to improve reasoning and
+      enable broad participation in decision-making, foster human connection, and enhance human agency.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      We believe that better reasoning leads to better decisions, and better decisions lead to
+      better outcomes for everyone. Our work focuses on building tools that help humans think
+      more clearly, communicate more effectively, and collaborate more productively.
+    </p>
+
+    <h2>What We're Building</h2>
+    <p>
+      Sylience is the company behind Chord, the platform for orchestrated communication.
+      Chord helps teams make better decisions, faster, by structuring conversations and
+      surfacing insights that would otherwise be lost.
+    </p>
+
+    <h2>Our Values</h2>
+    <p>
+      We're committed to building technology that augments human capability rather than
+      replacing it. We believe in transparency, thoughtful design, and putting people first.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span class="copyright">© 2026 Sylience</span>
+      <nav>
+        <a href="#">Contact</a>
+        <a href="#">hello@sylience.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <nav class="page-nav">
+    <a href="a1-full-site-warm.html">Home</a>
+    <a href="a1-full-site-warm-about.html" class="current">About</a>
+    <a href="a1-full-site-warm-careers.html">Careers</a>
+  </nav>
+
+  <details class="nav-box">
+    <summary>A series</summary>
+    <a href="a1-full-site-warm.html" class="current">A1: Full Site (Warm)</a>
+    <a href="a2-full-site-cool.html">A2: Full Site (Cool)</a>
+    <a href="a3-bolder-type.html">A3: Bolder Type</a>
+    <a href="a4-micro-interactions.html">A4: Micro-interactions</a>
+    <a href="a5-editorial-site.html">A5: Editorial Site</a>
+  </details>
+</body>
+</html>

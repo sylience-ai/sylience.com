@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E3: Site (Warm) - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #2a3830;
+      --color-text: #4d5c52;
+      --color-muted: #7a8a80;
+      --color-bg: #FAF6EF;
+      --color-bg-alt: #F5F1EA;
+      --font: 'Carlito', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+    }
+
+    /* Sticky header - brand appears on scroll */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: background 0.3s;
+    }
+    header.scrolled {
+      background: rgba(250, 246, 239, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    header.scrolled .brand { opacity: 1; }
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
+    header nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--color-primary); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero .title {
+      font-size: clamp(5.5rem, 14vw, 8rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 0.25em;
+    }
+    .hero .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-muted);
+      margin-bottom: 2.5rem;
+    }
+    .hero .cta {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.75rem 2rem;
+      border: 1px solid rgba(42, 56, 48, 0.2);
+      border-radius: 100px;
+      transition: all 0.3s;
+    }
+    .hero .cta:hover {
+      background: var(--color-primary);
+      color: var(--color-bg);
+    }
+
+    /* Content sections */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .section.alt { background: var(--color-bg-alt); max-width: none; }
+    .section.alt .inner { max-width: 700px; margin: 0 auto; }
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+    .section p {
+      margin-bottom: 1.5rem;
+    }
+    .section a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      border-top: 1px solid rgba(42, 56, 48, 0.08);
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--color-primary); }
+
+    /* Demo nav */
+    .page-nav {
+      position: fixed;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1000;
+    }
+    .page-nav a {
+      display: block;
+      padding: 0.4rem 0.8rem;
+      background: rgba(42, 56, 48, 0.08);
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.65rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .page-nav a:hover, .page-nav a.current {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(42, 56, 48, 0.92);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 180px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; font-size: 0.65rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.7); padding: 0.2rem 0.5rem; font-size: 0.6rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #a8c4a8; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="#" class="brand">Sylience</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="e3-site-warm-careers.html">Careers</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1 class="title">Sylience</h1>
+    <p class="tagline">improving human reasoning with AI</p>
+    <a href="#about" class="cta">Learn more</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About</h2>
+    <p>
+      Sylience is a public benefit corporation whose mission is to improve reasoning and
+      enable broad participation in decision-making, foster human connection, and enhance human agency.
+    </p>
+    <p>
+      We're building <a href="#">Chord</a>, the platform for orchestrated communication.
+    </p>
+  </section>
+
+  <section class="section alt">
+    <div class="inner">
+      <h2>Our Approach</h2>
+      <p>
+        We believe that better tools for communication lead to better decisions.
+        Chord helps teams align on complex problems by structuring conversations
+        around evidence and reasoning rather than rhetoric.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Sylience · <a href="#">hello@sylience.com</a></p>
+  </footer>
+
+  <nav class="page-nav">
+    <a href="e3-site-warm.html" class="current">Home</a>
+    <a href="e3-site-warm-about.html">About</a>
+    <a href="e3-site-warm-careers.html">Careers</a>
+  </nav>
+
+  <details class="nav-box">
+    <summary>E series</summary>
+    <a href="e1-essence.html">E1: Essence</a>
+    <a href="e2-polished.html">E2: Polished</a>
+    <a href="e3-site-warm.html" class="current">E3: Site (Warm)</a>
+    <a href="e4-site-refined.html">E4: Site (Refined)</a>
+    <a href="e5-recommendation.html">E5: Recommendation</a>
+  </details>
+
+  <script>
+    const header = document.getElementById('header');
+    const hero = document.getElementById('hero');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          header.classList.remove('scrolled');
+        } else {
+          header.classList.add('scrolled');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(hero);
+  </script>
+</body>
+</html>

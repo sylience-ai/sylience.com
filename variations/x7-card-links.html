@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X7: Card Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-heading: #2d3b32;
+      --color-text: #5a6860;
+      --color-bg: #f5f2eb;
+      --color-card: #ffffff;
+      --color-accent: #4a7c59;
+      --font-body: 'Carlito', sans-serif;
+      --content-width: 800px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+
+    /* Sticky nav */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 242, 235, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      z-index: 100;
+    }
+    .site-brand {
+      font-weight: 700;
+      color: var(--color-heading);
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .site-nav {
+      display: flex;
+      gap: 2rem;
+    }
+    .site-nav a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .site-nav a:hover { color: var(--color-accent); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+    .hero-title {
+      font-size: 4.5rem;
+      color: var(--color-heading);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-tagline {
+      font-size: 1.35rem;
+      color: var(--color-text);
+    }
+
+    /* Content */
+    .content {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      text-align: center;
+    }
+    .content > p {
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Card links */
+    .card-links {
+      margin-top: 4rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-links h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .card-link {
+      display: block;
+      background: var(--color-card);
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--color-heading);
+      text-align: left;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card-link .arrow {
+      float: right;
+      color: var(--color-accent);
+      opacity: 0.5;
+      transition: opacity 0.15s ease;
+    }
+    .card-link:hover .arrow { opacity: 1; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--color-card);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text);
+      margin-top: auto;
+    }
+    .site-footer a { color: var(--color-accent); text-decoration: none; }
+
+    /* Nav box */
+    .nav-box {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(49, 67, 56, 0.9);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      z-index: 1000;
+      max-width: 200px;
+    }
+    .nav-box summary { cursor: pointer; padding: 0.25rem 0.5rem; }
+    .nav-box a { display: block; color: rgba(255,255,255,0.8); padding: 0.25rem 0.5rem; font-size: 0.65rem; text-decoration: none; }
+    .nav-box a:hover { color: white; }
+    .nav-box a.current { color: #ED7D31; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="site-brand">Sylience</a>
+    <nav class="site-nav">
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">Sylience</h1>
+      <p class="hero-tagline">improving human reasoning with AI</p>
+    </section>
+
+    <section class="content">
+      <p>
+        Sylience is a public benefit corporation whose mission is to improve reasoning and
+        enable broad participation in decision-making, foster human connection, and enhance human agency.
+      </p>
+      <p>
+        Sylience is the company behind Chord, the platform for orchestrated communication.
+      </p>
+
+      <div class="card-links">
+        <h3>Learn more</h3>
+        <a href="#" class="card-link">
+          How Chord helps your business make better decisions, faster
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="card-link">
+          Sylience and its mission
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="card-link">
+          Opportunities to build the future of human communication
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 Sylience · <a href="#">hello@sylience.com</a>
+  </footer>
+
+  <details class="nav-box">
+    <summary>Variations</summary>
+    <a href="x1-large-hero-fixed-nav.html">X1: Large Hero + Fixed Nav</a>
+    <a href="x2-soft-wide-centered.html">X2: Soft & Wide</a>
+    <a href="x3-warm-accents.html">X3: Warm Accents</a>
+    <a href="x4-dark-mode.html">X4: Dark Mode</a>
+    <a href="x5-minimal-airy.html">X5: Minimal Airy</a>
+    <a href="x6-bold-typography.html">X6: Bold Typography</a>
+    <a href="x7-card-links.html" class="current">X7: Card Links</a>
+    <a href="x8-editorial.html">X8: Editorial</a>
+    <a href="x9-compact.html">X9: Compact</a>
+    <a href="x10-refined.html">X10: Refined</a>
+  </details>
+</body>
+</html>

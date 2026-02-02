@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg"
+     width="512" height="512" viewBox="0 0 512 512">
+  <title>Sylience</title>
+  <rect width="512" height="512" fill="#ffffff"/>
+  <path fill="#2a3830" d="M256 64c-72 0-128 40-128 96 0 48 40 80 96 96l64 16c32 8 48 24 48 48 0 32-32 56-80 56-56 0-96-32-104-80h-48c8 72 72 128 152 128 80 0 136-48 136-104 0-56-40-88-104-104l-56-16c-32-8-48-24-48-48 0-28 28-48 72-48 48 0 80 28 88 72h48c-8-72-72-112-136-112z"/>
+</svg>

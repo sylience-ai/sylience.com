@@ -1,24 +1,33 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Open roles shown on this page. To post a role, add a page under
+// src/pages/careers/ and an entry here, e.g.
+// { slug: 'founding-engineer', title: 'Founding Engineer', meta: 'Full-time · Remote · US timezones preferred' }
+const listings: { slug: string; title: string; meta: string }[] = [];
 ---
 
 <BaseLayout title="Careers - Sylience" description="Join Sylience and help build the future of human communication." activePage="careers">
   <h1>Join Us</h1>
 
-  <p class="intro">We're a small team working on ambitious problems at the intersection of AI and human reasoning. We're looking for people who move fast, thrive in ambiguity, and care deeply about building things that matter.</p>
+  {listings.length > 0 ? (
+    <>
+      <p class="intro">We're a small team working on ambitious problems at the intersection of AI and human reasoning. We're looking for people who move fast, thrive in ambiguity, and care deeply about building things that matter.</p>
 
-  <div class="jobs">
-    <a href="/careers/founding-engineer" class="job">
-      <div class="job-title">Founding Engineer</div>
-      <div class="job-meta">Full-time · Remote · US timezones preferred</div>
-    </a>
-    <a href="/careers/chief-of-staff" class="job">
-      <div class="job-title">Chief of Staff</div>
-      <div class="job-meta">Full-time · Remote · US timezones preferred</div>
-    </a>
-  </div>
+      <div class="jobs">
+        {listings.map((job) => (
+          <a href={`/careers/${job.slug}`} class="job">
+            <div class="job-title">{job.title}</div>
+            <div class="job-meta">{job.meta}</div>
+          </a>
+        ))}
+      </div>
 
-  <div class="contact">
-    <p>Don't see a role that fits? Reach out to <a href="mailto:careers@sylience.com">careers@sylience.com</a>.</p>
-  </div>
+      <div class="contact">
+        <p>Don't see a role that fits? Reach out to <a href="mailto:careers@sylience.com">careers@sylience.com</a>.</p>
+      </div>
+    </>
+  ) : (
+    <p class="intro">Sylience is not currently hiring. If you'd like to express interest or have other questions, please reach out to <a href="mailto:careers@sylience.com">careers@sylience.com</a>.</p>
+  )}
 </BaseLayout>
